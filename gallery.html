@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gallery — Anne Kerr Photography</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body class="gallery-page">
+
+  <!-- NAV -->
+  <nav class="nav-page">
+    <a class="nav-brand" href="index.html">Anne Kerr Photography</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="gallery.html" class="active">Gallery</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <main class="gallery-main">
+    <h1 class="gallery-page-title">Collections</h1>
+
+    <div class="gallery-grid">
+
+      <!-- ─── GALLERY CARD ────────────────────────────────────────
+           To add a new gallery, copy one <a class="gallery-card"> block,
+           update the href, img src, title, and description.
+           Thumbnail images go in images/thumbnails/ at 1200px wide, 3:2 ratio.
+      ─────────────────────────────────────────────────────────── -->
+
+      <a class="gallery-card" href="https://www.annekerrphotography.com/solitude/" target="_blank">
+        <div class="gallery-card-image">
+          <!-- Thumbnail: images/thumbnails/solitude.jpg -->
+          <img src="images/thumbnails/solitude.jpg" alt="Solitude" />
+          <div class="gallery-card-overlay">
+            <span>View Collection</span>
+          </div>
+        </div>
+        <div class="gallery-card-info">
+          <h2>Solitude</h2>
+          <p>A window into the quiet beauty of Yellowstone in winter — stark, ethereal, unspoiled.</p>
+        </div>
+      </a>
+
+      <!-- Add more gallery cards here as your collections grow -->
+
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <span>© 2026 Anne Kerr Photography</span>
+    <a href="https://www.instagram.com/annetkerr/" target="_blank" class="footer-instagram" aria-label="Instagram">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+           stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+        <circle cx="12" cy="12" r="4"/>
+        <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none"/>
+      </svg>
+    </a>
+  </footer>
+
+</body>
+</html>

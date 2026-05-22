@@ -1,4 +1,18 @@
-/* Anne Kerr Photography — base styles */
+/* Anne Kerr Photography — styles.css */
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400&family=Raleway:wght@300;400;500&display=swap');
+
+:root {
+  --font-heading: 'Cormorant Garamond', Georgia, serif;
+  --font-body: 'Raleway', sans-serif;
+  --color-text: #333;
+  --color-muted: #888;
+  --color-taupe: #6b6560;
+  --color-accent: #b09090;
+  --color-border: #e5e5e5;
+  --color-white: #fff;
+  --nav-height: 72px;
+}
 
 *, *::before, *::after {
   box-sizing: border-box;
@@ -6,67 +20,344 @@
   padding: 0;
 }
 
+html, body {
+  height: 100%;
+}
+
 body {
-  font-family: Georgia, serif;
-  color: #222;
+  font-family: var(--font-body);
+  font-weight: 300;
+  color: var(--color-text);
   background: #fff;
 }
 
-/* HERO */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ─── NAV ─────────────────────────────────────────────── */
+
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  height: var(--nav-height);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2.5rem;
+  transition: background 0.3s;
+}
+
+/* Home page: transparent nav with white text over hero */
+nav.nav-hero {
+  color: var(--color-white);
+}
+
+/* Inner pages: white background with dark text */
+nav.nav-page {
+  background: var(--color-white);
+  color: var(--color-text);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.nav-brand {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: 1rem;
+  letter-spacing: 0.02em;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2.5rem;
+  list-style: none;
+}
+
+.nav-links a {
+  font-size: 0.85rem;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  transition: opacity 0.2s;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  opacity: 0.6;
+}
+
+/* ─── FOOTER ──────────────────────────────────────────── */
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.25rem 2.5rem;
+  border-top: 1px solid var(--color-border);
+  font-size: 0.78rem;
+  font-weight: 300;
+  color: var(--color-muted);
+}
+
+footer a {
+  color: var(--color-muted);
+  transition: color 0.2s;
+}
+
+footer a:hover {
+  color: var(--color-text);
+}
+
+.footer-instagram svg {
+  display: block;
+  width: 18px;
+  height: 18px;
+}
+
+/* ─── HOME PAGE ───────────────────────────────────────── */
+
 .hero {
   position: relative;
   width: 100%;
   height: 100vh;
   overflow: hidden;
+  background: #c8d0d8; /* fallback color while image loads */
 }
 
 .hero img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center;
+  display: block;
 }
 
-.hero-text {
-  position: absolute;
-  bottom: 2rem;
-  left: 2rem;
-  color: #fff;
-  text-shadow: 0 1px 4px rgba(0,0,0,0.6);
+/* ─── ABOUT PAGE ──────────────────────────────────────── */
+
+.about-page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
-.hero-text h1 {
-  font-size: 2.5rem;
-  font-weight: normal;
-  letter-spacing: 0.05em;
+.about-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  flex: 1;
+  padding-top: var(--nav-height);
 }
 
-/* SECTIONS */
-section {
-  max-width: 900px;
-  margin: 4rem auto;
-  padding: 0 2rem;
+.about-text {
+  padding: 5rem 3.5rem 4rem 2.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
-section h2 {
-  font-size: 1.2rem;
-  font-weight: normal;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
+.about-text h1 {
+  font-family: var(--font-heading);
+  font-weight: 300;
+  font-size: 2.8rem;
+  color: var(--color-taupe);
+  margin-bottom: 3rem;
+}
+
+.about-text p {
+  font-size: 0.9rem;
+  line-height: 1.95;
+  color: #666;
+  max-width: 520px;
   margin-bottom: 1.5rem;
-  border-bottom: 1px solid #ddd;
-  padding-bottom: 0.5rem;
 }
 
-section p {
-  line-height: 1.8;
-  color: #444;
+.about-text p:last-child {
+  margin-bottom: 0;
 }
 
-/* GALLERY GRID */
+.about-image {
+  position: relative;
+  overflow: hidden;
+  background: #ddd;
+  /* Image fills the full right column height */
+  min-height: calc(100vh - var(--nav-height));
+}
+
+.about-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
+
+.about-image-instagram {
+  position: absolute;
+  bottom: 1.5rem;
+  left: 1.5rem;
+}
+
+.about-image-instagram a {
+  color: rgba(255,255,255,0.8);
+  transition: color 0.2s;
+}
+
+.about-image-instagram a:hover {
+  color: #fff;
+}
+
+.about-image-instagram svg {
+  display: block;
+  width: 20px;
+  height: 20px;
+}
+
+/* ─── CONTACT PAGE ────────────────────────────────────── */
+
+.contact-page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  position: relative;
+}
+
+.contact-bg {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background: #dde4ea; /* fallback */
+}
+
+.contact-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  opacity: 0.75;
+}
+
+.contact-main {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: calc(var(--nav-height) + 2rem) 2rem 3rem;
+}
+
+.contact-card {
+  background: rgba(255, 255, 255, 0.93);
+  padding: 3.5rem 4rem;
+  width: 100%;
+  max-width: 580px;
+}
+
+.contact-card h2 {
+  text-align: center;
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 0.78rem;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: #666;
+  margin-bottom: 3rem;
+}
+
+.form-group {
+  margin-bottom: 2rem;
+}
+
+.form-group label {
+  display: block;
+  font-size: 0.68rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+  margin-bottom: 0.6rem;
+  font-weight: 400;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid #ccc;
+  padding: 0.4rem 0;
+  font-family: var(--font-body);
+  font-size: 0.88rem;
+  font-weight: 300;
+  background: transparent;
+  color: var(--color-text);
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-bottom-color: #999;
+}
+
+.form-group textarea {
+  height: 90px;
+  resize: none;
+  display: block;
+}
+
+.form-submit {
+  text-align: center;
+  margin-top: 2.5rem;
+}
+
+.btn-send {
+  background: transparent;
+  border: 1px solid var(--color-accent);
+  color: var(--color-accent);
+  padding: 0.8rem 2.8rem;
+  font-family: var(--font-body);
+  font-size: 0.68rem;
+  font-weight: 400;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 0.25s, color 0.25s;
+}
+
+.btn-send:hover {
+  background: var(--color-accent);
+  color: var(--color-white);
+}
+
+/* ─── GALLERY PAGE ────────────────────────────────────── */
+
+.gallery-page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.gallery-main {
+  flex: 1;
+  padding: calc(var(--nav-height) + 3rem) 2.5rem 4rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.gallery-page-title {
+  font-family: var(--font-heading);
+  font-weight: 300;
+  font-size: 2rem;
+  color: var(--color-taupe);
+  letter-spacing: 0.05em;
+  margin-bottom: 3rem;
+}
+
 .gallery-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-  gap: 1.5rem;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2.5rem;
 }
 
 .gallery-card {
@@ -75,26 +366,106 @@ section p {
   color: inherit;
 }
 
-.gallery-card img {
+.gallery-card-image {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 3 / 2;
+  background: #e0e0e0; /* fallback while image loads */
+}
+
+.gallery-card-image img {
   width: 100%;
-  aspect-ratio: 4/3;
+  height: 100%;
   object-fit: cover;
   display: block;
+  transition: transform 0.5s ease;
 }
 
-.gallery-card h3 {
-  margin-top: 0.5rem;
-  font-size: 1rem;
-  font-weight: normal;
+.gallery-card:hover .gallery-card-image img {
+  transform: scale(1.03);
 }
 
-.gallery-card p {
-  font-size: 0.875rem;
-  color: #888;
-  margin-top: 0.25rem;
+/* "View Collection" overlay on hover */
+.gallery-card-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s ease;
 }
 
-/* CONTACT */
-.contact p {
-  font-size: 1rem;
+.gallery-card-overlay span {
+  color: #fff;
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  font-weight: 400;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.gallery-card:hover .gallery-card-overlay {
+  background: rgba(0, 0, 0, 0.25);
+}
+
+.gallery-card:hover .gallery-card-overlay span {
+  opacity: 1;
+}
+
+.gallery-card-info {
+  padding: 1rem 0 0;
+}
+
+.gallery-card-info h2 {
+  font-family: var(--font-heading);
+  font-weight: 300;
+  font-size: 1.4rem;
+  color: var(--color-taupe);
+  margin-bottom: 0.4rem;
+}
+
+.gallery-card-info p {
+  font-size: 0.82rem;
+  line-height: 1.7;
+  color: var(--color-muted);
+  font-weight: 300;
+}
+
+/* ─── RESPONSIVE ──────────────────────────────────────── */
+
+@media (max-width: 768px) {
+  nav {
+    padding: 0 1.25rem;
+  }
+
+  .nav-links {
+    gap: 1.25rem;
+  }
+
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .about-image {
+    min-height: 60vw;
+  }
+
+  .about-text {
+    padding: 3rem 1.5rem;
+  }
+
+  .contact-card {
+    padding: 2.5rem 1.75rem;
+  }
+
+  footer {
+    padding: 1.25rem 1.5rem;
+  }
 }
