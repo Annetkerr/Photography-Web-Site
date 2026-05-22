@@ -2,9 +2,9 @@
 deployment:
   tasks:
     - export DEPLOYPATH=/home4/annekerr/public_html/
-    - /bin/cp -R css $DEPLOYPATH
-    - /bin/cp -R images $DEPLOYPATH
-    - /bin/cp index.html $DEPLOYPATH
-    - /bin/cp about.html $DEPLOYPATH
-    - /bin/cp contact.html $DEPLOYPATH
-    - /bin/cp gallery.html $DEPLOYPATH
+    - /bin/cp -Rf /home4/annekerr/repositories/photography-web-site/css $DEPLOYPATH
+    - /bin/cp -Rf /home4/annekerr/repositories/photography-web-site/images $DEPLOYPATH
+    - /bin/cp -f /home4/annekerr/repositories/photography-web-site/index.html $DEPLOYPATH
+    - /bin/cp -f /home4/annekerr/repositories/photography-web-site/about.html $DEPLOYPATH
+    - /bin/cp -f /home4/annekerr/repositories/photography-web-site/contact.html $DEPLOYPATH
+    - /bin/cp -f /home4/annekerr/repositories/photography-web-site/gallery.html $DEPLOYPATH
