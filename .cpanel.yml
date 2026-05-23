@@ -8,3 +8,4 @@ deployment:
     - /bin/cp -f /home4/annekerr/repositories/photography-web-site/about.html $DEPLOYPATH
     - /bin/cp -f /home4/annekerr/repositories/photography-web-site/contact.html $DEPLOYPATH
     - /bin/cp -f /home4/annekerr/repositories/photography-web-site/gallery.html $DEPLOYPATH
+    - /bin/cp -Rf /home4/annekerr/repositories/photography-web-site/essay $DEPLOYPATH
