@@ -5,9 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Photo Essay — Anne Kerr Photography</title>
 
-  <!-- Redirect to Adobe Express photo essay -->
-  <meta http-equiv="refresh" content="1; url=https://new.express.adobe.com/webpage/jSNy2kYH9xELf" />
-
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400&family=Raleway:wght@300;400&display=swap" />
 
@@ -18,100 +15,217 @@
       --color-text: #333;
       --color-muted: #888;
       --color-accent: #b09090;
+      --color-border: #e5e5e5;
+      --color-white: #fff;
+      --nav-height: 72px;
     }
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     html, body {
-      height: 100%;
       font-family: var(--font-body);
       font-weight: 300;
       color: var(--color-text);
       background: #fff;
     }
 
-    body {
+    /* ── NAV ── */
+    .nav-page {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      height: var(--nav-height);
+      background: var(--color-white);
+      border-bottom: 1px solid var(--color-border);
       display: flex;
-      flex-direction: column;
       align-items: center;
-      justify-content: center;
-      min-height: 100vh;
-      text-align: center;
-      padding: 2rem;
+      justify-content: space-between;
+      padding: 0 2.5rem;
+      z-index: 100;
     }
 
-    .brand {
+    .nav-brand {
       font-family: var(--font-heading);
       font-weight: 300;
       font-size: 1.1rem;
       letter-spacing: 0.12em;
       text-transform: uppercase;
+      color: var(--color-text);
+      text-decoration: none;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 2rem;
+    }
+
+    .nav-links a {
+      font-size: 0.75rem;
+      font-weight: 400;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
       color: var(--color-muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active { color: var(--color-text); }
+
+    /* ── MAIN ── */
+    main {
+      margin-top: var(--nav-height);
+      min-height: calc(100vh - var(--nav-height) - 60px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 5rem 2rem;
+    }
+
+    .essay-card {
+      max-width: 680px;
+      width: 100%;
+      text-align: center;
+    }
+
+    /* Optional preview image */
+    .essay-preview {
+      width: 100%;
+      max-height: 420px;
+      object-fit: cover;
       margin-bottom: 3rem;
+      display: block;
+    }
+
+    .essay-label {
+      font-size: 0.7rem;
+      font-weight: 400;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--color-muted);
+      margin-bottom: 1rem;
     }
 
     h1 {
       font-family: var(--font-heading);
       font-weight: 300;
-      font-size: 2.2rem;
+      font-size: 2.6rem;
       letter-spacing: 0.04em;
-      margin-bottom: 1rem;
+      margin-bottom: 1.5rem;
+      line-height: 1.2;
     }
 
-    p {
-      font-size: 0.9rem;
+    .essay-description {
+      font-size: 0.95rem;
+      line-height: 1.8;
       color: var(--color-muted);
-      letter-spacing: 0.06em;
-      margin-bottom: 2.5rem;
+      margin-bottom: 3rem;
+      max-width: 520px;
+      margin-left: auto;
+      margin-right: auto;
     }
 
-    .direct-link {
+    .btn-essay {
       display: inline-block;
       font-family: var(--font-body);
       font-size: 0.75rem;
       font-weight: 400;
       letter-spacing: 0.14em;
       text-transform: uppercase;
-      color: var(--color-accent);
-      border-bottom: 1px solid var(--color-accent);
-      padding-bottom: 2px;
+      color: var(--color-white);
+      background: var(--color-accent);
+      border: 1px solid var(--color-accent);
+      padding: 0.85rem 2.5rem;
       text-decoration: none;
-      transition: color 0.2s;
+      transition: background 0.25s, color 0.25s;
     }
 
-    .direct-link:hover { color: var(--color-text); border-color: var(--color-text); }
+    .btn-essay:hover {
+      background: transparent;
+      color: var(--color-accent);
+    }
 
-    .back-link {
-      position: fixed;
-      bottom: 2rem;
-      left: 50%;
-      transform: translateX(-50%);
+    /* ── FOOTER ── */
+    footer {
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1.5rem;
+      border-top: 1px solid var(--color-border);
       font-size: 0.75rem;
-      letter-spacing: 0.1em;
+      letter-spacing: 0.08em;
+      color: var(--color-muted);
+    }
+
+    footer a {
       color: var(--color-muted);
       text-decoration: none;
     }
 
-    .back-link:hover { color: var(--color-text); }
+    footer a:hover { color: var(--color-text); }
+
+    .footer-instagram svg {
+      width: 18px;
+      height: 18px;
+      vertical-align: middle;
+    }
+
+    @media (max-width: 600px) {
+      .nav-links { gap: 1.2rem; }
+      h1 { font-size: 1.9rem; }
+      .essay-preview { max-height: 260px; }
+    }
   </style>
 </head>
 <body>
 
-  <div class="brand">Anne Kerr Photography</div>
+  <nav class="nav-page">
+    <a class="nav-brand" href="../index.html">Anne Kerr Photography</a>
+    <ul class="nav-links">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="../gallery.html">Gallery</a></li>
+      <li><a href="../about.html">About</a></li>
+      <li><a href="../contact.html">Contact</a></li>
+    </ul>
+  </nav>
 
-  <h1>Opening Photo Essay</h1>
-  <p>You will be redirected momentarily&hellip;</p>
+  <main>
+    <div class="essay-card">
 
-  <a class="direct-link" href="https://new.express.adobe.com/webpage/jSNy2kYH9xELf">
-    Open essay directly &rarr;
-  </a>
+      <!-- PREVIEW IMAGE
+           Replace the src with whichever image you'd like to use as a cover.
+           Remove this <img> tag entirely if you prefer no preview image. -->
+      <img class="essay-preview"
+           src="../images/thumbnails/openingshift.jpg"
+           alt="Opening shift — a scene from the photo essay" />
 
-  <a class="back-link" href="../index.html">&larr; Back to portfolio</a>
+      <p class="essay-label">Photo Essay</p>
+      <h1>Opening Shift</h1>
 
-  <script>
-    // Immediate JS redirect as primary method; meta refresh above is the fallback
-    window.location.replace("https://new.express.adobe.com/webpage/jSNy2kYH9xELf");
-  </script>
+      <p class="essay-description">
+        <!-- Replace this text with a brief description of the essay. -->
+        A quiet study of the hour before the city wakes — the routines, the light,
+        and the people who set the day in motion before anyone else arrives.
+      </p>
+
+      <a class="btn-essay" href="https://new.express.adobe.com/webpage/jSNy2kYH9xELf"
+         target="_blank" rel="noopener">View Essay</a>
+
+    </div>
+  </main>
+
+  <footer>
+    <span>© 2026 Anne Kerr Photography</span>
+    <a href="https://www.instagram.com/annetkerr/" target="_blank" class="footer-instagram" aria-label="Instagram">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+           stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+        <circle cx="12" cy="12" r="4"/>
+        <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none"/>
+      </svg>
+    </a>
+  </footer>
 
 </body>
 </html>
