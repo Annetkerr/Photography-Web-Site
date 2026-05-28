@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>17 Reasons Athletic Club — Anne Kerr Photography</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400&family=Raleway:wght@300;400&display=swap" />
+
+  <style>
+    :root {
+      --font-heading: 'Cormorant Garamond', Georgia, serif;
+      --font-body: 'Raleway', sans-serif;
+      --color-text: #333;
+      --color-muted: #888;
+      --color-accent: #b09090;
+      --color-border: #e5e5e5;
+      --color-white: #fff;
+      --nav-height: 72px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html, body {
+      font-family: var(--font-body);
+      font-weight: 300;
+      color: var(--color-text);
+      background: #fff;
+    }
+
+    /* ── NAV ── */
+    .nav-page {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      height: var(--nav-height);
+      background: var(--color-white);
+      border-bottom: 1px solid var(--color-border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 2.5rem;
+      z-index: 100;
+    }
+
+    .nav-brand {
+      font-family: var(--font-heading);
+      font-weight: 300;
+      font-size: 1.1rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--color-text);
+      text-decoration: none;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 2rem;
+    }
+
+    .nav-links a {
+      font-size: 0.75rem;
+      font-weight: 400;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--color-muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active { color: var(--color-text); }
+
+    /* ── MAIN ── */
+    main {
+      margin-top: var(--nav-height);
+      min-height: calc(100vh - var(--nav-height) - 60px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 5rem 2rem;
+    }
+
+    .essay-card {
+      max-width: 680px;
+      width: 100%;
+      text-align: center;
+    }
+
+    .essay-preview {
+      width: 100%;
+      max-height: 420px;
+      object-fit: cover;
+      margin-bottom: 3rem;
+      display: block;
+    }
+
+    .essay-label {
+      font-size: 0.7rem;
+      font-weight: 400;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--color-muted);
+      margin-bottom: 1rem;
+    }
+
+    h1 {
+      font-family: var(--font-heading);
+      font-weight: 300;
+      font-size: 2.6rem;
+      letter-spacing: 0.04em;
+      margin-bottom: 1.5rem;
+      line-height: 1.2;
+    }
+
+    .essay-description {
+      font-size: 0.95rem;
+      line-height: 1.8;
+      color: var(--color-muted);
+      margin-bottom: 3rem;
+      max-width: 520px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .btn-essay {
+      display: inline-block;
+      font-family: var(--font-body);
+      font-size: 0.75rem;
+      font-weight: 400;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--color-white);
+      background: var(--color-accent);
+      border: 1px solid var(--color-accent);
+      padding: 0.85rem 2.5rem;
+      text-decoration: none;
+      transition: background 0.25s, color 0.25s;
+    }
+
+    .btn-essay:hover {
+      background: transparent;
+      color: var(--color-accent);
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1.5rem;
+      border-top: 1px solid var(--color-border);
+      font-size: 0.75rem;
+      letter-spacing: 0.08em;
+      color: var(--color-muted);
+    }
+
+    footer a {
+      color: var(--color-muted);
+      text-decoration: none;
+    }
+
+    footer a:hover { color: var(--color-text); }
+
+    .footer-instagram svg {
+      width: 18px;
+      height: 18px;
+      vertical-align: middle;
+    }
+
+    @media (max-width: 600px) {
+      .nav-links { gap: 1.2rem; }
+      h1 { font-size: 1.9rem; }
+      .essay-preview { max-height: 260px; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="nav-page">
+    <a class="nav-brand" href="../index.html">Anne Kerr Photography</a>
+    <ul class="nav-links">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="../gallery.html">Gallery</a></li>
+      <li><a href="../about.html">About</a></li>
+      <li><a href="../contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <div class="essay-card">
+
+      <img class="essay-preview"
+           src="../images/thumbnails/17rac.jpg"
+           alt="17 Reasons Athletic Club" />
+
+      <p class="essay-label">Portraits</p>
+      <h1>17 Reasons Athletic Club</h1>
+
+      <p class="essay-description">
+        A portrait series from 17 Reasons Athletic Club — the people, the energy, and the
+        community that make it more than a gym. These photographs are a celebration of
+        the dedication and spirit that show up every day.
+      </p>
+
+      <a class="btn-essay" href="https://galleries.annekerrphotography.com/17RAC/"
+         target="_blank" rel="noopener">View Collection</a>
+
+    </div>
+  </main>
+
+  <footer>
+    <span>© 2026 Anne Kerr Photography</span>
+    <a href="https://www.instagram.com/annetkerr/" target="_blank" class="footer-instagram" aria-label="Instagram">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+           stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+        <circle cx="12" cy="12" r="4"/>
+        <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none"/>
+      </svg>
+    </a>
+  </footer>
+
+</body>
+</html>
